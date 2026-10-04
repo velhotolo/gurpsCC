@@ -390,16 +390,16 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tfDiCost00" layoutX="582.0" layoutY="392.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost01" layoutX="582.0" layoutY="418.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost02" layoutX="582.0" layoutY="444.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost03" layoutX="582.0" layoutY="470.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost04" layoutX="582.0" layoutY="496.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost05" layoutX="582.0" layoutY="522.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost06" layoutX="582.0" layoutY="548.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost07" layoutX="582.0" layoutY="574.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost08" layoutX="583.0" layoutY="600.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfDiCost09" layoutX="583.0" layoutY="626.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost" layoutX="582.0" layoutY="392.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost1" layoutX="582.0" layoutY="418.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost2" layoutX="582.0" layoutY="444.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost3" layoutX="582.0" layoutY="470.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost4" layoutX="582.0" layoutY="496.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost5" layoutX="582.0" layoutY="522.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost6" layoutX="582.0" layoutY="548.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost7" layoutX="582.0" layoutY="574.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost8" layoutX="583.0" layoutY="600.0" prefHeight="25.0" prefWidth="53.0" />
+      <TextField fx:id="tfDiCost9" layoutX="583.0" layoutY="626.0" prefHeight="25.0" prefWidth="53.0" />
       <TextField fx:id="tfDiCost10" layoutX="582.0" layoutY="652.0" prefHeight="25.0" prefWidth="53.0" />
       <TextField fx:id="tfDiCost11" layoutX="583.0" layoutY="678.0" prefHeight="25.0" prefWidth="53.0" />
       <TextField fx:id="tfAdCost" layoutX="275.0" layoutY="390.0" prefHeight="26.0" prefWidth="44.0" />

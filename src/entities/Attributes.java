@@ -1,8 +1,5 @@
 package entities;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Attributes extends Data {
 
   private int st = 10;

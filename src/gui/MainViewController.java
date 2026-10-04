@@ -13,6 +13,7 @@ public class MainViewController extends Attributes {
   // * FXML correspondence of each element
 
   private List<TextField> adv = new ArrayList<>();
+  private List<TextField> disadv = new ArrayList<>();
 
   @FXML
   TextField stSet;
@@ -153,34 +154,34 @@ public class MainViewController extends Attributes {
   TextField tfDi11;
 
   @FXML
-  TextField tfDiCost00;
+  TextField tfDiCost;
 
   @FXML
-  TextField tfDiCost01;
+  TextField tfDiCost1;
 
   @FXML
-  TextField tfDiCost02;
+  TextField tfDiCost2;
 
   @FXML
-  TextField tfDiCost03;
+  TextField tfDiCost3;
 
   @FXML
-  TextField tfDiCost04;
+  TextField tfDiCost4;
 
   @FXML
-  TextField tfDiCost05;
+  TextField tfDiCost5;
 
   @FXML
-  TextField tfDiCost06;
+  TextField tfDiCost6;
 
   @FXML
-  TextField tfDiCost07;
+  TextField tfDiCost7;
 
   @FXML
-  TextField tfDiCost08;
+  TextField tfDiCost8;
 
   @FXML
-  TextField tfDiCost09;
+  TextField tfDiCost9;
 
   @FXML
   TextField tfDiCost10;
@@ -485,6 +486,8 @@ public class MainViewController extends Attributes {
         return;
       }
 
+
+
       try {
         int value = Integer.parseInt(newValue.trim());
 
@@ -496,17 +499,6 @@ public class MainViewController extends Attributes {
         }
       } catch (NumberFormatException e) {
         field.setStyle("-fx-border-color: red;");
-      }
-    });
-
-    field.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
-      if (!isNowFocused) {
-        String text = field.getText();
-        if (text == null || text.trim().isEmpty() || Integer.parseInt(text.trim()) < 1) {
-          field.setText("1");
-          field.setStyle("-fx-border-color: green;");
-          onCalculate.run();
-        }
       }
     });
   }
@@ -768,6 +760,11 @@ public class MainViewController extends Attributes {
   public void initialize() {
       adv.addAll(List.of(tfAdCost, tfAdCost1, tfAdCost2, tfAdCost3, tfAdCost4, tfAdCost5,
           tfAdCost6, tfAdCost7, tfAdCost8, tfAdCost9, tfAdCost10, tfAdCost11));
+
+      disadv.addAll(List.of(tfDiCost, tfDiCost1, tfDiCost2, tfDiCost3, tfDiCost4, tfDiCost5,
+          tfDiCost6, tfDiCost7, tfDiCost8, tfDiCost9, tfDiCost10, tfDiCost11));
+
+
     dmgRegister(); // Initialize Damage Table
     bindAttr(stSet, getSt(), this::stCalculate);
     bindAttr(dxSet, getDx(), this::dxCalculate);
@@ -784,6 +781,10 @@ public class MainViewController extends Attributes {
     bindAttr(ptTotalSet, ptTotalSet.getText(), this::getPointTotal);
     for (TextField field : adv){
     bindAttr(field, field.getText(), this::advantageCalculate);
+    }
+
+    for (TextField content : disadv){
+    bindAttr(content, content.getText(), this::disadvantageCalculate);
     }
 
 
@@ -832,21 +833,46 @@ public class MainViewController extends Attributes {
           if (text != null && !text.isBlank()) {
               try {
                   sum += Integer.parseInt(text.trim());
-              } catch (NumberFormatException e) {
+              }catch (NumberFormatException e){
 
               }
           }
+      }
     setAdvAdvantPoints(sum);
+    settingUnspentPoints();
+    lbUnspentPoints.setText(String.valueOf(getUnspentPoints()));
+
+
+  }
+
+  public void disadvantageCalculate() {
+      int all = 0;
+
+      for (TextField content : disadv) {
+          String holder = content.getText();
+          if (holder != null && !holder.isBlank()) {
+              try {
+                  all += Integer.parseInt(holder.trim());
+              }catch (NumberFormatException e){
+
+              }
+          }
+    setDisadvPoints(-all);
     settingUnspentPoints();
     lbUnspentPoints.setText(String.valueOf(getUnspentPoints()));
 
   }
   }
 
+
   public void stCalculate() {
     int currentSt = Integer.parseInt(stSet.getText().trim());
 
     setSt(currentSt);
+    if (currentSt < 1) {
+        currentSt = 1;
+        stSet.setText("1");
+    }
     settingBasicLift();
     lbBasicLift.setText(String.valueOf(getBasicLift()));
     updateDamageDisplay();
