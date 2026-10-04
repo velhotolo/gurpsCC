@@ -5,10 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.scene.control.TextInputControl;
 
 public class MainViewController extends Attributes {
   // * FXML correspondence of each element
+
+  private List<TextField> adv = new ArrayList<>();
 
   @FXML
   TextField stSet;
@@ -77,34 +81,34 @@ public class MainViewController extends Attributes {
   TextField tfAd11;
 
   @FXML
-  TextField tfAdCost00;
+  TextField tfAdCost;
 
   @FXML
-  TextField tfAdCost01;
+  TextField tfAdCost1;
 
   @FXML
-  TextField tfAdCost02;
+  TextField tfAdCost2;
 
   @FXML
-  TextField tfAdCost03;
+  TextField tfAdCost3;
 
   @FXML
-  TextField tfAdCost04;
+  TextField tfAdCost4;
 
   @FXML
-  TextField tfAdCost05;
+  TextField tfAdCost5;
 
   @FXML
-  TextField tfAdCost06;
+  TextField tfAdCost6;
 
   @FXML
-  TextField tfAdCost07;
+  TextField tfAdCost7;
 
   @FXML
-  TextField tfAdCost08;
+  TextField tfAdCost8;
 
   @FXML
-  TextField tfAdCost09;
+  TextField tfAdCost9;
 
   @FXML
   TextField tfAdCost10;
@@ -466,30 +470,6 @@ public class MainViewController extends Attributes {
   @FXML
   Button btPsiMagic;
 
-  @FXML
-  ComboBox<Languages> spoken1;
-
-  @FXML
-  ComboBox<Languages> spoken2;
-
-  @FXML
-  ComboBox<Languages> spoken3;
-
-  @FXML
-  ComboBox<Languages> spoken4;
-
-  @FXML
-  ComboBox<Languages> written1;
-
-  @FXML
-  ComboBox<Languages> written2;
-
-  @FXML
-  ComboBox<Languages> written3;
-
-  @FXML
-  ComboBox<Languages> written4;
-
   private void bindAttr(TextInputControl field, Object initialValue, Runnable onCalculate) { // listener main structure
     field.setText(String.valueOf(initialValue));
     field.setStyle("-fx-border-color: green;");
@@ -783,14 +763,18 @@ public class MainViewController extends Attributes {
 
   }
 
-  public void initialize() {
-    dmgRegister(); // Initialize Damage Table
 
+
+  public void initialize() {
+      adv.addAll(List.of(tfAdCost, tfAdCost1, tfAdCost2, tfAdCost3, tfAdCost4, tfAdCost5,
+          tfAdCost6, tfAdCost7, tfAdCost8, tfAdCost9, tfAdCost10, tfAdCost11));
+    dmgRegister(); // Initialize Damage Table
     bindAttr(stSet, getSt(), this::stCalculate);
     bindAttr(dxSet, getDx(), this::dxCalculate);
     bindAttr(iqSet, getIq(), this::iqCalculate);
     bindAttr(htSet, getHt(), this::htCalculate);
-    updateDamageDisplay();
+
+    updateDamageDisplay(); // Load damage display on labels
 
     bindAttr(hpSet, stSet.getText(), this::hpCalculate);
     bindAttr(willSet, iqSet.getText(), this::willCalculate);
@@ -798,7 +782,11 @@ public class MainViewController extends Attributes {
     bindAttr(fpSet, htSet.getText(), this::fpCalculate);
 
     bindAttr(ptTotalSet, ptTotalSet.getText(), this::getPointTotal);
-    bindAttr(tfAdCost00, tfAdCost00.getText(), this::advantageCalculate);
+    for (TextField field : adv){
+    bindAttr(field, field.getText(), this::advantageCalculate);
+    }
+
+
 
     bSpeedSet.setText(String.format("%.2f", (getBasicSpeed()))); // Basic speed can have decimal places
     bMoveSet.setText(String.valueOf(getBasicMove()));
@@ -837,12 +825,22 @@ public class MainViewController extends Attributes {
   }
 
   public void advantageCalculate() {
+      int sum = 0;
 
-    int points = parseOrDefault(tfAdCost00.getText(), 0);
-    setAdvAdvantPoints(points);
+      for (TextField field : adv) {
+          String text = field.getText();
+          if (text != null && !text.isBlank()) {
+              try {
+                  sum += Integer.parseInt(text.trim());
+              } catch (NumberFormatException e) {
+
+              }
+          }
+    setAdvAdvantPoints(sum);
     settingUnspentPoints();
     lbUnspentPoints.setText(String.valueOf(getUnspentPoints()));
 
+  }
   }
 
   public void stCalculate() {

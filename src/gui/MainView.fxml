@@ -402,16 +402,16 @@
       <TextField fx:id="tfDiCost09" layoutX="583.0" layoutY="626.0" prefHeight="25.0" prefWidth="53.0" />
       <TextField fx:id="tfDiCost10" layoutX="582.0" layoutY="652.0" prefHeight="25.0" prefWidth="53.0" />
       <TextField fx:id="tfDiCost11" layoutX="583.0" layoutY="678.0" prefHeight="25.0" prefWidth="53.0" />
-      <TextField fx:id="tfAdCost00" layoutX="275.0" layoutY="390.0" prefHeight="26.0" prefWidth="44.0" />
-      <TextField fx:id="tfAdCost01" layoutX="275.0" layoutY="416.0" prefHeight="26.0" prefWidth="44.0" />
-      <TextField fx:id="tfAdCost02" layoutX="275.0" layoutY="442.0" prefHeight="26.0" prefWidth="44.0" />
-      <TextField fx:id="tfAdCost03" layoutX="275.0" layoutY="468.0" prefHeight="26.0" prefWidth="45.0" />
-      <TextField fx:id="tfAdCost04" layoutX="275.0" layoutY="494.0" prefHeight="26.0" prefWidth="44.0" />
-      <TextField fx:id="tfAdCost05" layoutX="275.0" layoutY="520.0" prefHeight="26.0" prefWidth="45.0" />
-      <TextField fx:id="tfAdCost06" layoutX="275.0" layoutY="546.0" prefHeight="26.0" prefWidth="45.0" />
-      <TextField fx:id="tfAdCost07" layoutX="275.0" layoutY="572.0" prefHeight="26.0" prefWidth="45.0" />
-      <TextField fx:id="tfAdCost08" layoutX="276.0" layoutY="598.0" prefHeight="26.0" prefWidth="45.0" />
-      <TextField fx:id="tfAdCost09" layoutX="276.0" layoutY="624.0" prefHeight="26.0" prefWidth="44.0" />
+      <TextField fx:id="tfAdCost" layoutX="275.0" layoutY="390.0" prefHeight="26.0" prefWidth="44.0" />
+      <TextField fx:id="tfAdCost1" layoutX="275.0" layoutY="416.0" prefHeight="26.0" prefWidth="44.0" />
+      <TextField fx:id="tfAdCost2" layoutX="275.0" layoutY="442.0" prefHeight="26.0" prefWidth="44.0" />
+      <TextField fx:id="tfAdCost3" layoutX="275.0" layoutY="468.0" prefHeight="26.0" prefWidth="45.0" />
+      <TextField fx:id="tfAdCost4" layoutX="275.0" layoutY="494.0" prefHeight="26.0" prefWidth="44.0" />
+      <TextField fx:id="tfAdCost5" layoutX="275.0" layoutY="520.0" prefHeight="26.0" prefWidth="45.0" />
+      <TextField fx:id="tfAdCost6" layoutX="275.0" layoutY="546.0" prefHeight="26.0" prefWidth="45.0" />
+      <TextField fx:id="tfAdCost7" layoutX="275.0" layoutY="572.0" prefHeight="26.0" prefWidth="45.0" />
+      <TextField fx:id="tfAdCost8" layoutX="276.0" layoutY="598.0" prefHeight="26.0" prefWidth="45.0" />
+      <TextField fx:id="tfAdCost9" layoutX="276.0" layoutY="624.0" prefHeight="26.0" prefWidth="44.0" />
       <TextField fx:id="tfAdCost10" layoutX="275.0" layoutY="650.0" prefHeight="26.0" prefWidth="44.0" />
       <TextField fx:id="tfAdCost11" layoutX="276.0" layoutY="676.0" prefHeight="26.0" prefWidth="44.0" />
       <Button fx:id="btCreatePdf" layoutX="1053.0" layoutY="403.0" mnemonicParsing="false" text="Create PDF">

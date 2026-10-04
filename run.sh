@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-FX_LIB="$HOME/lib/javafx-sdk-21.0.6/lib"
+FX_LIB="$HOME/lib/javafx-sdk-17.0.20/lib"
 SRC_DIR="src"
 BIN_DIR="bin"
 
@@ -26,7 +26,6 @@ javac --module-path "$FX_LIB" \
 java --module-path "$FX_LIB" \
   --add-modules javafx.controls,javafx.fxml \
   --enable-native-access=ALL-UNNAMED,javafx.graphics \
-  --sun-misc-unsafe-memory-access=allow \
   -Djava.library.path="$FX_LIB" \
   -cp "$BIN_DIR" \
   application.Main 2> >(grep -v -E "javafx.fxml.FXMLLoader|sun.misc.Unsafe|WARNING|ADVERTÊNCIA" >&2)
