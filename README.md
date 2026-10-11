@@ -19,7 +19,7 @@ The project is currently built as a standalone desktop client using **JavaFX**, 
 * **Language:** Java (JDK 17+)
 * **GUI Toolkit:** [JavaFX](https://openjfx.io/)
 * **Document Processing:** [Apache PDFBox](https://pdfbox.apache.org/)
-* **Build Tool:** Maven / Gradle
+* **Build Tool:** None :D (explanations below)
 
 ---
 
@@ -27,7 +27,7 @@ The project is currently built as a standalone desktop client using **JavaFX**, 
 
 * **Automated Point Accounting:** Real-time tracking of character point totals, campaign power levels, and sub-pools.
 * **Native PDF Stamping:** Uses PDFBox to inject calculated stats, skills, and advantages directly into form fields or precise coordinate layers of official GURPS sheets.
-* **Desktop-first UX:** Responsive UI designed with JavaFX for local character management.
+* **Desktop-first UX:** UI designed with JavaFX for local character management.
 
 ---
 
@@ -35,13 +35,13 @@ The project is currently built as a standalone desktop client using **JavaFX**, 
 
 - [ ] Open Character (`.json` / native save parser)
 - [ ] Save Character state
-- [ ] Advantages & Perks cost calculation engine
-- [ ] Disadvantages & Quirks cost calculation engine
+- [x] Advantages & Perks cost calculation engine
+- [x] Disadvantages & Quirks cost calculation engine
 - [ ] Skill types, difficulty tiers, and point progression
 - [ ] Comprehensive Points Summary dashboard
 - [ ] Language proficiency tiers & costs
 - [ ] Cultural Familiarities workflow & costs
-- [ ] Swing & Thrust damage lookup table / progression
+- [x] Swing & Thrust damage lookup table / progression
 - [ ] Undo / Redo history stack
 - [ ] Application "About" view & license info
 - [ ] Complete technical documentation
@@ -53,7 +53,11 @@ The project is currently built as a standalone desktop client using **JavaFX**, 
 ### Prerequisites
 
 * Java Development Kit (JDK) 17 or higher
-* Maven or Gradle installed
+* JavaFX
+
+### What happened
+I was using Eclipse in Ubuntu when I switched to Arch. Something happened and my Maven structure and config stopped working.
+So now I just have a .classpath to work with. I'll need to write scripts (.sh, .bat) to run the app. 
 
 ### Running Locally
 
@@ -62,8 +66,8 @@ The project is currently built as a standalone desktop client using **JavaFX**, 
 git clone [https://github.com/your-username/gurpsCC.git](https://github.com/your-username/gurpsCC.git)
 cd gurpsCC
 
-# Run with Maven
-mvn clean javafx:run
+# Make the script "runnable"
+chmod +x gurpsCC.sh
 
-# Or run with Gradle
-./gradlew run
+# Run the script
+./gurpsCC.sh
